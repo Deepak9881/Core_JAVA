@@ -1,5 +1,6 @@
 package Friends;
 
+import java.util.Arrays;
 import java.util.Date;
 
 //Q2. Write a java program to store information of your friends
@@ -100,6 +101,12 @@ public class Friends {
 
 	public void setHobby(String[] hobby) {
 		this.hobby = hobby;
+	}
+
+	@Override
+	public String toString() {
+		return "Friends [id=" + id + ", name=" + name + ", lname=" + lname + ", mobno=" + mobno + ", email=" + email
+				+ ", address=" + address + ", bdate=" + bdate + ", hobby=" + Arrays.toString(hobby) + "]";
 	}
 	
 	

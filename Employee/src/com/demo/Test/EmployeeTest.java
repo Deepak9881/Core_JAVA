@@ -1,5 +1,6 @@
 package com.demo.Test;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -52,12 +53,13 @@ public class EmployeeTest {
 				break;
 				
 			case 6:
+				
 				ls=es.SortEmpByName();
+			
 				if(ls!=null) {
 					ls.forEach((e)->{
 						System.out.println(e);
-					});
-				}
+					});}
 				else {System.out.println("Data not found");}
 				break;
 				

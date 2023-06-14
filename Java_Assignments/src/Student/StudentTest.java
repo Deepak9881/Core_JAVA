@@ -45,6 +45,14 @@ public class StudentTest {
 				StudentService.calculateGPA(id);
 				break;
 				
+			case 6:
+				sc.close();
+				System.out.println("Thanks for visiting");
+				break;
+				
+			default:
+				System.out.println("Invalid choice");
+				
 			}
 			
 		}while(choice!=6);

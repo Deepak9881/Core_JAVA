@@ -1,5 +1,6 @@
 package Friends;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -18,7 +19,7 @@ import java.util.Scanner;
 public class FriendService {
       public static Friends farr[];
       public static int count;
-      SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
+      static SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
       
       static {
     	  farr=new Friends[10];
@@ -37,12 +38,19 @@ public class FriendService {
 		sc.nextLine();
 		System.out.println("Enter the mobile no");
 		String mob=sc.nextLine();
-		sc.nextLine();
 		System.out.println("Enter the email");
 		String email=sc.nextLine();
-		sc.nextLine();
 		System.out.println("Enter the address");
 		String addres= sc.nextLine();
+		System.out.println("Enter the date in (dd/MM/YYYY) format");
+		String bdate=sc.next();
+		Date bda=null;
+		try {
+			bda=sdf.parse(bdate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		int cnt=0;
 		int choice=0;
 		String []hobby= new String[5];
@@ -51,12 +59,47 @@ public class FriendService {
 			System.out.println("\n 1. Enter hobby \n 2. Exit");
 			choice=sc.nextInt();
 			System.out.println("Enter the hobby");
+			System.out.println();
 			hobby[cnt]=sc.next();
 		}while(choice!=2);
 		
-		farr[count]=new Friends(id,nm,lnm,mob,email,addres,new Date(), hobby);
+		farr[count++]=new Friends(id,nm,lnm,mob,email,addres,bda, hobby);
 		
 		}
+
+
+
+	public static void displayAll() {
+		for(int i=0; i<count;i++) {
+			System.out.println(farr[i]);
+		}
+		
+	}
+
+
+
+	public static void displayById(int id) {
+		for(int i=0; i<count;i++) {
+			if(farr[i].getId()==id) {
+				System.out.println(farr[i]);
+				return;
+			}
+		}
+		System.out.println("Not found");
+	}
+
+
+
+	public static void displayByName(String nm) {
+		
+		for(int i=0; i<count;i++) {
+			if(farr[i].getName() ==nm) {
+				System.out.println(farr[i]);
+				return;
+			}
+		}
+		System.out.println("Not found");
+	}
 		
 		
 	}

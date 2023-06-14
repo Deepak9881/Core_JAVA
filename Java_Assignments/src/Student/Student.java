@@ -58,7 +58,7 @@ public class Student {
 	}
 
 	public String toString() {
-		return "Student Id " + this.sid + " Student name " + this.sname + " M1="
+		return "Student Id: " + this.sid + " Student name: " + this.sname + " M1="
 	             + this.m1 + " M2=" + this.m2 + " M3="+ this.m3;
 	}
 

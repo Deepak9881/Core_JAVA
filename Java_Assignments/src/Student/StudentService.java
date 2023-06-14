@@ -56,9 +56,9 @@ public class StudentService {
 public static void calculateGPA(int id) {
 	int ind=searchbyID(id);
 	
-	float grade=(sarr[ind].getM1()+sarr[ind].getM2()+sarr[ind].getM3())/3;
+	float grade=(float) ((sarr[ind].getM1()*0.33+sarr[ind].getM2()*0.5+sarr[ind].getM3()*0.25)/3);
 	
-	System.out.println("");
+	System.out.println("Grade of student :"+grade);
 	
 }
 

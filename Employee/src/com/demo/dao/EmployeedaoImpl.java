@@ -1,6 +1,7 @@
 package com.demo.dao;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import com.demo.beans.Employee;
@@ -95,7 +96,8 @@ public class EmployeedaoImpl implements Employeedao {
 		for(Employee e:elist) {
 			ls.add(e);
 		}
-		ls.sort(new Myname());
+		Comparator<Employee>  c=(ob1,ob2)->{return ob1.getEname().compareTo(ob2.getEname());};
+		ls.sort(c);
 	    
 		return ls;
 	}
